@@ -14,7 +14,7 @@ namespace YouTube.Demo.Core.Api.Controllers
     {
         [HttpGet]
         public ActionResult<string> Get() =>
-            Ok("Hello Wolrd. I am Aslan.");
+            Ok("Hello World. I'm Aslan.");
 
     }
 }
