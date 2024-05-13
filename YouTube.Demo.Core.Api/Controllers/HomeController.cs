@@ -8,7 +8,7 @@ using RESTFulSense.Controllers;
 
 namespace YouTube.Demo.Core.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class HomeController : RESTFulController
     {
