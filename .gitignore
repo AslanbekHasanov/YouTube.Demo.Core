@@ -397,3 +397,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /YouTube.Demo.Core/YouTube.Demo.Core.Api/appsettings.Development.json
+/YouTube.Demo.Core.Api/appsettings.Development.json
+/YouTube.Demo.Core.Api/appsettings.Development.json
+/YouTube.Demo.Core.Api/appsettings.Development.json
