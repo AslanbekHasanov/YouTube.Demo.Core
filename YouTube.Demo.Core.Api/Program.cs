@@ -3,8 +3,11 @@
 // FREE TO USE TO CONNECT THE WORLD
 // ---------------------------------------------------------------
 
+using YouTube.Demo.Core.Api.Brokers.Storages;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<IStorageBroker, StorageBroker>();
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();

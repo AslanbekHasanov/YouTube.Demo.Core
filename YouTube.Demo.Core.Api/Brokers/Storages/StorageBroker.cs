@@ -5,10 +5,11 @@
 
 using Microsoft.EntityFrameworkCore;
 using STX.EFxceptions.SqlServer;
+using YouTube.Demo.Core.Api.Models.VideoMetadatas;
 
 namespace YouTube.Demo.Core.Api.Brokers.Storages
 {
-    internal partial class StorageBroker: EFxceptionsContext
+    internal partial class StorageBroker: EFxceptionsContext, IStorageBroker
     {
         private readonly IConfiguration configuration;
 
@@ -25,6 +26,7 @@ namespace YouTube.Demo.Core.Api.Brokers.Storages
             optionsBuilder.UseSqlServer(connectionString);
            
         }
+        
     }
 
 }
