@@ -11,7 +11,13 @@ namespace YouTube.Demo.Core.Api.Brokers.Storages
     internal partial class StorageBroker
     {
         public DbSet<VideoMetadata> VideoMetadatas { get; set; }
-        
 
+        public async ValueTask<VideoMetadata> InsertVideoMetadataAsync(VideoMetadata videoMetadata)
+        {
+            await this.AddAsync(videoMetadata);
+            await this.SaveChangesAsync();
+
+            return videoMetadata;
+        }
     }
 }
