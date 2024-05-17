@@ -12,12 +12,20 @@ namespace YouTube.Demo.Core.Api.Brokers.Storages
     {
         public DbSet<VideoMetadata> VideoMetadatas { get; set; }
 
-        public async ValueTask<VideoMetadata> InsertVideoMetadataAsync(VideoMetadata videoMetadata)
-        {
-            await this.AddAsync(videoMetadata);
-            await this.SaveChangesAsync();
+        public async ValueTask<VideoMetadata> InsertVideoMetadataAsync(VideoMetadata videoMetadata) =>
+            await InsertAsync(videoMetadata);
 
-            return videoMetadata;
-        }
+        public async ValueTask<VideoMetadata> DeleteVideoMetadataAsync(VideoMetadata videoMetadata)=>
+            await DeleteAsync(videoMetadata);
+
+        public IQueryable<VideoMetadata> SelectAllVideoMetadataAsync()=>
+            SelectAll<VideoMetadata>();
+
+        public async ValueTask<VideoMetadata> SelectVideoMetadataByIdAsync(Guid videoMetadataId) =>
+            await SelectAsync<VideoMetadata>(videoMetadataId);
+
+
+        public async ValueTask<VideoMetadata> UpdateVideoMetadataAsync(VideoMetadata videoMetadata)=>
+            await UpdateAsync(videoMetadata);
     }
 }
