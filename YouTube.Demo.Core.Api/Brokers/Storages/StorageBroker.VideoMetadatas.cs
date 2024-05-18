@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------
 
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using YouTube.Demo.Core.Api.Models.VideoMetadatas;
 
 namespace YouTube.Demo.Core.Api.Brokers.Storages

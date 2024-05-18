@@ -6,10 +6,10 @@
 using System.Threading.Tasks;
 using YouTube.Demo.Core.Api.Models.VideoMetadatas;
 
-namespace YouTube.Demo.Core.Api.Brokers.Storages
+namespace YouTube.Demo.Core.Api.Services.VideoMetadatas
 {
-    public partial interface IStorageBroker
+    internal interface IVideoMetadataService
     {
-        ValueTask<VideoMetadata> InsertVideoMetadataAsync(VideoMetadata videoMetadata);
+        ValueTask<VideoMetadata> AddVideoMetadataAsync(VideoMetadata videoMetadata);
     }
 }

@@ -5,6 +5,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using RESTFulSense.Controllers;
+using System.Threading.Tasks;
 using YouTube.Demo.Core.Api.Brokers.Storages;
 using YouTube.Demo.Core.Api.Models.VideoMetadatas;
 
@@ -32,6 +33,5 @@ namespace YouTube.Demo.Core.Api.Controllers
 
             return Created(storageVideoMetadata);
         }
-
     }
 }

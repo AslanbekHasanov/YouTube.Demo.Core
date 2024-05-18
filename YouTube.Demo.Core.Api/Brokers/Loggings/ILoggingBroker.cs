@@ -3,6 +3,8 @@
 // FREE TO USE TO CONNECT THE WORLD
 // ---------------------------------------------------------------
 
+using System;
+
 namespace YouTube.Demo.Core.Api.Brokers.Loggings
 {
     public interface ILoggingBroker

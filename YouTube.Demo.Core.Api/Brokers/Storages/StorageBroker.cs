@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using STX.EFxceptions.SqlServer;
 using YouTube.Demo.Core.Api.Models.VideoMetadatas;
 
