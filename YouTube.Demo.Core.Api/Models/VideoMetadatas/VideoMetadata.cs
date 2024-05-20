@@ -3,6 +3,8 @@
 // FREE TO USE TO CONNECT THE WORLD
 // ---------------------------------------------------------------
 
+using System;
+
 namespace YouTube.Demo.Core.Api.Models.VideoMetadatas
 {
     public class VideoMetadata

@@ -3,6 +3,9 @@
 // FREE TO USE TO CONNECT THE WORLD
 // ---------------------------------------------------------------
 
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using YouTube.Demo.Core.Api.Brokers.Storages;
 
 var builder = WebApplication.CreateBuilder(args);
