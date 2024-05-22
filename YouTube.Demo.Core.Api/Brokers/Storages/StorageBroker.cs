@@ -6,6 +6,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using STX.EFxceptions.SqlServer;
+using System.Linq;
+using System.Threading.Tasks;
 using YouTube.Demo.Core.Api.Models.VideoMetadatas;
 
 namespace YouTube.Demo.Core.Api.Brokers.Storages
