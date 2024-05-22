@@ -4,6 +4,8 @@
 // ---------------------------------------------------------------
 
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using YouTube.Demo.Core.Api.Models.VideoMetadatas;
 
