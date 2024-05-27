@@ -3,8 +3,12 @@
 // FREE TO USE TO CONNECT THE WORLD
 // ---------------------------------------------------------------
 
+using Microsoft.Data.SqlClient;
 using Moq;
+using System.Linq.Expressions;
+using System.Runtime.Serialization;
 using Tynamix.ObjectFiller;
+using Xeptions;
 using YouTube.Demo.Core.Api.Brokers.Loggings;
 using YouTube.Demo.Core.Api.Brokers.Storages;
 using YouTube.Demo.Core.Api.Models.VideoMetadatas;
@@ -43,5 +47,17 @@ namespace Youtube.Demo.Core.Api.Tests.Unit.Services.Foundations.VideoMetadatas
 
             return filler;
         }
+
+        private static Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedException) =>
+            actualException => actualException.SameExceptionAs(expectedException);
+
+        private static SqlException GetSqlException() =>
+            (SqlException)FormatterServices.GetUninitializedObject(typeof(SqlException));
+
+        private static string GetRandomString() =>
+            new MnemonicString(wordCount: GetRandomNumber()).GetValue();
+
+        private static int GetRandomNumber() =>
+            new IntRange(min: 2, max: 10).GetValue();
     }
 }

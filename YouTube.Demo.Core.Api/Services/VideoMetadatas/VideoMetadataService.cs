@@ -11,7 +11,7 @@ using YouTube.Demo.Core.Api.Models.VideoMetadatas;
 
 namespace YouTube.Demo.Core.Api.Services.VideoMetadatas
 {
-    internal class VideoMetadataService : IVideoMetadataService
+    public partial class VideoMetadataService : IVideoMetadataService
     {
         private readonly IStorageBroker storageBroker;
         private readonly ILoggingBroker loggingBroker;
@@ -24,7 +24,12 @@ namespace YouTube.Demo.Core.Api.Services.VideoMetadatas
             this.loggingBroker = loggingBroker;
         }
 
-        public async ValueTask<VideoMetadata> AddVideoMetadataAsync(VideoMetadata videoMetadata) =>
-           await this.storageBroker.InsertVideoMetadataAsync(videoMetadata);
+        public ValueTask<VideoMetadata> AddVideoMetadataAsync(VideoMetadata videoMetadata) =>
+            TryCatch(async () =>
+            {
+                ValidateVideoMetadataOnAdd(videoMetadata);
+
+                return await this.storageBroker.InsertVideoMetadataAsync(videoMetadata);
+            });
     }
 }
